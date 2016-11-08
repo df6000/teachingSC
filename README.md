@@ -14,6 +14,10 @@ https://www.amazon.com/SuperCollider-Book-MIT-Press/dp/0262232693
 It's kinda spendy but I can loan you a copy for a few weeks if you want to check it out.
 
 
+Designing Sound Examples:
+http://sccode.org/tag/class/OnePole
+
+
 
 
 
