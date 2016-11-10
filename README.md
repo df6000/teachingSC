@@ -17,6 +17,11 @@ It's kinda spendy but I can loan you a copy for a few weeks if you want to check
 Designing Sound Examples:
 http://sccode.org/tag/class/OnePole
 
+a bunch of code from supercollider users that you can explore/use/modify:
+
+http://sccode.org/
+
+
 
 
 
