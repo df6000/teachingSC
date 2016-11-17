@@ -1,0 +1,50 @@
+
+//first store the synthdef
+ SynthDef(\guiPlayer2mono, {arg fxBuf=0, rate=1, startPos=0,loop=0, chan=0, fadeIn=1,playLength=2, fadeOut=1, fxVol=1;
+ 	var env= EnvGen.ar(Env.new([0,1,1,0],[fadeIn,playLength,fadeOut]),doneAction:2);
+
+ 	Out.ar(
+ 	chan, PlayBuf.ar(1,fxBuf,rate:rate,startPos:startPos,loop:loop)*env*fxVol)
+ }).store;
+
+
+
+
+// load the sound buffers
+
+~murmurs = SoundFile.collectIntoBuffers("/Network/Servers/server-295.ls.berkeley.edu/Volumes/Phoenix/NetHomes/chris/Desktop/__monoMurmurs/*");
+
+ ~murmurs.size;
+
+
+
+
+//run the routine
+
+Routine.run({
+/*
+					Synth(\guiPlayer2mono, [\fxBuf, 6, \rate, 1,\chan, rrand(0,1),\loop,1,\playLength,60,\fxVol, 1.0,\fadeIn,0.01,\fadeOut,0.01]);
+
+	10.wait;
+	*/
+
+1000.do{
+
+
+		Synth(\guiPlayer2mono, [\fxBuf, rrand(0,57), \rate, rrand(3.0,4.0),\chan, rrand(0,1),\loop,1,\playLength,rrand(0.01,0.5),\fxVol, 0.01,\fadeIn,0.01,\fadeOut,0.01]);
+
+
+		Synth(\guiPlayer2mono, [\fxBuf, rrand(0,57), \rate, rrand(0.1,0.3),\chan, rrand(0,1),\loop,1,\playLength,rrand(0.01,0.5),\fxVol, rrand(0.1,0.5),\fadeIn,0.01,\fadeOut,0.01]);
+
+	0.1.wait;
+};
+
+
+
+
+});
+
+
+
+
+
